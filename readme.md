@@ -51,3 +51,7 @@ Since the promotion will only show once (`frequency.occurences`) every 5 (`frequ
 ```
 example.show(); // zip, zilch, nada
 ```
+
+## More Details
+
+TBD...
