@@ -1,6 +1,12 @@
 # Promotions Manager
 
-A simple "promotions" manager that assists with dynamically displaying content to the user. Especially useful if you want to limit the frequency with which the promotion is shown. The manager does not assume anything about the "showing" and "hiding" functionality, it serves only as a means of verifying that a promotion should be shown based on its frequency parameters.
+A simple "promotions" manager that assists with dynamically displaying content to the user. Especially useful if you want to limit the frequency with which the promotion is shown. Promotions Manager makes the following assumptions:
+
+  * You have some piece of content you want to display to a user at a certain frequency (eg, once per day, once per hour, 5 times per week, or even *always*)
+  * You have some process for "showing" that content
+  * You have some process for "hiding" that content
+
+That's it, no more assumptions. *How* you actually show and hide the content is entirely up to you.
 
 ## Example
 
@@ -29,12 +35,14 @@ var example = promotion.create({
 When appropriate, fire the promotion's show command. The promotion manager automatically checks to see if the promotion should be shown based on the frequency parameters and, if so, fires the `onShow()` property:
 
 ```
+// if frequency conditions are passed, this fires the custom onShow() function
 example.show();
 ```
 
 Once you're done with the promotion, hide it, if you want:
 
 ```
+// fires custom onHide() function
 example.hide();
 ```
 
